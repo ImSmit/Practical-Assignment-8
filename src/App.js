@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Task from "./components/Task";
 import Tasks from './components/Tasks';
+import AddTask from './components/AddTask';
 function App() {
   const [tasks, setTasks] = useState([
     {
@@ -36,7 +37,9 @@ const toggleTask = (id) => {
 }
   return (
     <div className="container">
-    <Header/>{tasks.length > 0 ? (
+    <Header/>
+    <AddTask />
+    {tasks.length > 0 ? (
     <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleTask}/>): ('No Tasks to Show') }
     </div>
   );
